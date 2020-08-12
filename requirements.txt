@@ -1,0 +1,5 @@
+pytest
+pytest-mock
+flask
+flask-restful
+requests

@@ -1,0 +1,1 @@
+# 4 - Use a mock object as input to a class or function since the actual input is “complicated”
