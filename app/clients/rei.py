@@ -11,9 +11,6 @@ class ReiClient(HasRope):
     def __init__(self, base_url, rope_path):
         self._rope_endpoint = path.join(base_url, rope_path)
 
-    def fetch_rope(self, id) -> RopeModel:
-        pass  # not implemented for the presentation for simplicity
-
     def fetch_ropes(self) -> List[RopeModel]:
         ropes = requests.get(self._rope_endpoint)
         rope_models = []

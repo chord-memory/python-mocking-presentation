@@ -3,6 +3,7 @@ import pytest
 
 from app.create_app import create_app
 from app.controllers.rope import RopeController
+from app.resources import RopeCollection
 
 
 @pytest.fixture
@@ -30,3 +31,7 @@ def test_get_ropes(mocker, test_client):
     # assert
     assert json.loads(actual.data) == {'data': test_ropes}
     assert actual.status_code == 200
+
+    mock_rope_controller.assert_called_once_with(
+        RopeCollection._clients_with_rope
+    )
