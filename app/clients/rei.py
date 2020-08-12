@@ -12,9 +12,10 @@ class ReiClient(HasRope):
         self._rope_endpoint = path.join(base_url, rope_path)
 
     def fetch_ropes(self) -> List[RopeModel]:
-        ropes = requests.get(self._rope_endpoint)
+        response = requests.get(self._rope_endpoint)
+        response_dict = response.json()
         rope_models = []
-        for rope in ropes:
+        for rope in response_dict.get('data', []):
             rope_models.append(
                 RopeModel(
                     rope.get('diameter'),

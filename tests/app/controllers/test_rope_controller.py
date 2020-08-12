@@ -2,7 +2,7 @@ from dataclasses import asdict
 
 import pytest
 
-from app import settings
+from app import app_settings
 from app.clients.rei import ReiClient
 from app.controllers.rope import RopeController
 from app.models.rope import RopeModel
@@ -10,7 +10,7 @@ from app.models.rope import RopeModel
 
 def test_rope_controller_fetch_many_1(mocker):
     # arrange
-    test_rei_client = ReiClient(**settings['rei'])
+    test_rei_client = ReiClient(**app_settings['rei'])
     test_rope_model_1 = RopeModel(
         diameter=9.4,
         length=70,

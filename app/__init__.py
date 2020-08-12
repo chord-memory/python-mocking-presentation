@@ -1,4 +1,3 @@
-from app.clients.rei import ReiClient
 from app.settings import get_settings
 
-settings = get_settings()
+app_settings = get_settings()

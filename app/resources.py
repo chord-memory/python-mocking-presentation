@@ -1,6 +1,6 @@
 from flask_restful import Resource
 
-from app import settings
+from app import app_settings
 from app.clients.rei import ReiClient
 from app.controllers.rope import RopeController
 
@@ -8,7 +8,7 @@ from app.controllers.rope import RopeController
 class RopeCollection(Resource):
 
     _clients_with_rope = [
-        ReiClient(**settings['rei'])
+        ReiClient(**app_settings['rei'])
     ]
 
     def get(self):
