@@ -23,7 +23,11 @@ def test_get_ropes(mocker, test_client):
             'test rope': 'test rope 2'
         }
     ]
-    mock_rope_controller = mocker.patch.object(RopeController, 'fetch_many', return_value=test_ropes)
+    mock_rope_controller = mocker.patch.object(
+        RopeController,
+        'fetch_many',
+        return_value=test_rope
+    )
 
     # act
     actual = test_client.get('/ropes')
