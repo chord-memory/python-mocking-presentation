@@ -26,7 +26,7 @@ def test_get_ropes(mocker, test_client):
     mock_rope_controller = mocker.patch.object(
         RopeController,
         'fetch_many',
-        return_value=test_rope
+        return_value=test_ropes
     )
 
     # act
